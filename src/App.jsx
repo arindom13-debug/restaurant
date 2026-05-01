@@ -23,15 +23,18 @@ function App() {
           backgroundColor: "rgba(12, 10, 9, 0.85)",
         }}
       >
-        <div
+        <a
+          href="#"
           style={{
             fontSize: "22px",
             fontWeight: "800",
             letterSpacing: "-0.5px",
+            textDecoration: "none",
+            color: "white",
           }}
         >
           Bella<span style={{ color: "#f97316" }}>Vista</span>
-        </div>
+        </a>
         <div style={{ display: "flex", gap: "32px" }}>
           <a
             href="#menu"
@@ -124,13 +127,12 @@ function App() {
               fontSize: "18px",
               color: "#a8a29e",
               lineHeight: "1.8",
-              marginBottom: "40px",
-              maxWidth: "520px",
               margin: "0 auto 40px",
+              maxWidth: "520px",
             }}
           >
             Experience the finest flavours of Italian and Mediterranean cuisine
-            in the heart of the city. Fresh ingredients, crafted with passion.
+            in the heart of the city.
           </p>
           <div
             style={{
@@ -253,8 +255,6 @@ function App() {
             Fresh ingredients, authentic recipes, unforgettable flavours.
           </p>
         </div>
-
-        {/* Menu Categories */}
         <div
           style={{
             display: "grid",
@@ -273,16 +273,19 @@ function App() {
                   name: "Bruschetta al Pomodoro",
                   desc: "Toasted bread, fresh tomatoes, basil, garlic",
                   price: "$12",
+                  img: "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=400&q=80",
                 },
                 {
                   name: "Burrata & Prosciutto",
                   desc: "Creamy burrata, aged prosciutto, fig jam",
                   price: "$18",
+                  img: "https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=400&q=80",
                 },
                 {
                   name: "Calamari Fritti",
                   desc: "Crispy fried calamari, lemon aioli",
                   price: "$15",
+                  img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&q=80",
                 },
               ],
             },
@@ -294,16 +297,19 @@ function App() {
                   name: "Spaghetti Carbonara",
                   desc: "Guanciale, egg yolk, pecorino romano",
                   price: "$24",
+                  img: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=400&q=80",
                 },
                 {
                   name: "Grilled Sea Bass",
                   desc: "Mediterranean herbs, lemon butter, capers",
                   price: "$32",
+                  img: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&q=80",
                 },
                 {
                   name: "Osso Buco Milanese",
                   desc: "Braised veal, gremolata, saffron risotto",
                   price: "$38",
+                  img: "https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80",
                 },
               ],
             },
@@ -315,16 +321,19 @@ function App() {
                   name: "Tiramisu Classico",
                   desc: "Mascarpone, espresso, ladyfingers",
                   price: "$10",
+                  img: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&q=80",
                 },
                 {
                   name: "Panna Cotta",
                   desc: "Vanilla bean, mixed berry coulis",
                   price: "$9",
+                  img: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&q=80",
                 },
                 {
                   name: "Cannoli Siciliani",
                   desc: "Crispy shells, ricotta, pistachios",
                   price: "$11",
+                  img: "https://images.unsplash.com/photo-1559622214-f8a9850965bb?w=400&q=80",
                 },
               ],
             },
@@ -363,8 +372,8 @@ function App() {
                   key={ii}
                   style={{
                     display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
+                    gap: "14px",
+                    alignItems: "center",
                     padding: "14px 0",
                     borderBottom:
                       ii < section.items.length - 1
@@ -372,6 +381,17 @@ function App() {
                         : "none",
                   }}
                 >
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    style={{
+                      width: "64px",
+                      height: "64px",
+                      borderRadius: "10px",
+                      objectFit: "cover",
+                      flexShrink: 0,
+                    }}
+                  />
                   <div style={{ flex: 1 }}>
                     <p
                       style={{
@@ -393,7 +413,7 @@ function App() {
                       color: "#f97316",
                       fontWeight: "700",
                       fontSize: "15px",
-                      margin: "0 0 0 16px",
+                      margin: "0",
                       whiteSpace: "nowrap",
                     }}
                   >
@@ -522,7 +542,7 @@ function App() {
         </div>
       </section>
 
-      {/* Contact / Reservation */}
+      {/* Contact */}
       <section
         id="contact"
         style={{
@@ -564,51 +584,47 @@ function App() {
             marginBottom: "48px",
           }}
         >
-          <div
-            style={{
-              backgroundColor: "#1c1917",
-              border: "1px solid #292524",
-              borderRadius: "12px",
-              padding: "24px 32px",
-              minWidth: "200px",
-            }}
-          >
-            <p style={{ fontSize: "24px", margin: "0 0 8px 0" }}>📞</p>
-            <p style={{ fontWeight: "600", margin: "0 0 4px 0" }}>Call us</p>
-            <p style={{ color: "#f97316", margin: 0, fontWeight: "700" }}>
-              +880 1234 567890
-            </p>
-          </div>
-          <div
-            style={{
-              backgroundColor: "#1c1917",
-              border: "1px solid #292524",
-              borderRadius: "12px",
-              padding: "24px 32px",
-              minWidth: "200px",
-            }}
-          >
-            <p style={{ fontSize: "24px", margin: "0 0 8px 0" }}>🕐</p>
-            <p style={{ fontWeight: "600", margin: "0 0 4px 0" }}>
-              Opening Hours
-            </p>
-            <p style={{ color: "#a8a29e", margin: 0 }}>Mon–Sun: 12pm – 11pm</p>
-          </div>
-          <div
-            style={{
-              backgroundColor: "#1c1917",
-              border: "1px solid #292524",
-              borderRadius: "12px",
-              padding: "24px 32px",
-              minWidth: "200px",
-            }}
-          >
-            <p style={{ fontSize: "24px", margin: "0 0 8px 0" }}>📍</p>
-            <p style={{ fontWeight: "600", margin: "0 0 4px 0" }}>Location</p>
-            <p style={{ color: "#a8a29e", margin: 0 }}>
-              123 GEC Circle, Chittagong
-            </p>
-          </div>
+          {[
+            {
+              emoji: "📞",
+              title: "Call us",
+              value: "+880 1234 567890",
+              color: "#f97316",
+            },
+            {
+              emoji: "🕐",
+              title: "Opening Hours",
+              value: "Mon–Sun: 12pm – 11pm",
+              color: "#a8a29e",
+            },
+            {
+              emoji: "📍",
+              title: "Location",
+              value: "123 GEC Circle, Chittagong",
+              color: "#a8a29e",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              style={{
+                backgroundColor: "#1c1917",
+                border: "1px solid #292524",
+                borderRadius: "12px",
+                padding: "24px 32px",
+                minWidth: "200px",
+              }}
+            >
+              <p style={{ fontSize: "24px", margin: "0 0 8px 0" }}>
+                {item.emoji}
+              </p>
+              <p style={{ fontWeight: "600", margin: "0 0 4px 0" }}>
+                {item.title}
+              </p>
+              <p style={{ color: item.color, margin: 0, fontWeight: "600" }}>
+                {item.value}
+              </p>
+            </div>
+          ))}
         </div>
         <a
           href="tel:+8801234567890"
